@@ -96,7 +96,7 @@ SEARCHTWEETS_ACCESS_TOKEN_SECRET = "VALUE_ACCESS_TOKEN_SECRET"
 - Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas (O download pode ser realizado pela própria página do Python ou Anaconda):
 [Python](https://www.anaconda.com/products/individual).
 
-- Irá ser necessário obter os tokens de acesso à API do Twitter usando a sequência de passos listadas em: https://developer.twitter.com/en/docs/platform-overview.
+- É necessário obter os tokens de acesso à API do Twitter usando a sequência de passos listadas em: https://developer.twitter.com/en/docs/platform-overview.
 
 ## 📝 Licença
 

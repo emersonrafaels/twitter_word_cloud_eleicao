@@ -21,6 +21,6 @@ def orchestra_connect_twitter():
                                wait_on_rate_limit=True)
 
     except Exception as ex:
-        print("ERRO NA FUNÇÃO {} - {}".format(stack([0][3], ex)))
+        print("ERRO NA FUNÇÃO {} - {}".format(stack()[0][3], ex))
 
     return client

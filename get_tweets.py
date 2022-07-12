@@ -1,3 +1,4 @@
+from datetime import datetime
 import os
 
 import tweepy as tw
@@ -12,9 +13,18 @@ client = orchestra_connect_twitter()
 # BUSCA SEM RETWEET
 QUERY = "Bolsonaro OR Lula -is:retweet lang:pt"
 LIMIT = 10
+START_TIME = datetime(2022, 7, 5, 10, 10, 10)
+END_TIME = datetime(2022, 7, 12)
+
+
+TWETTS_ADITIONAL_ARGS = {"START_TIME": START_TIME,
+                         "END_TIME": END_TIME}
 
 # OBTENDO OS RECENTES TWEETS USANDO A QUERY
-validator, tweets, df_tweets = get_recently_tweets(client=client, query=QUERY, limit=LIMIT)
+validator, tweets, df_tweets = get_recently_tweets(client=client,
+                                                   query=QUERY,
+                                                   limit=LIMIT,
+                                                   kwargs=TWETTS_ADITIONAL_ARGS)
 
 
 if validator:
