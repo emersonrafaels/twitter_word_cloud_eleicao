@@ -1,10 +1,10 @@
 
 <h1 align="center">
-    <img alt="TWITTER - ELEIÇÃO - WORD CLOUD" title="#TWITTER_ELEICAO_WORD_CLOUD" src="./assets/banner.png" />
+    <img alt="TWITTER - WORD CLOUD - ELEIÇÃO" title="#TWITTER_WORD CLOUD_ELEICAO" src="./assets/banner.png" />
 </h1>
 
 <h4 align="center"> 
-	🚧 TWITTER - ELEIÇÃO - WORD CLOUD 1.0 🚀 em desenvolvimento... 🚧
+	🚧 TWITTER - WORD CLOUD - ELEIÇÃO 1.0 🚀 em desenvolvimento... 🚧
 </h4>
 
 <p align="center">
@@ -31,7 +31,7 @@
 
 ## 💻 Sobre o projeto
 
-📦 **TWITTER - ELEIÇÃO - WORD CLOUD** é um projeto de **processamento de linguagem natural (NLP)** que utiliza a **API do Twitter** para obter os **tweets** sobre a **Eleição brasileira**.
+📦 **TWITTER - WORD CLOUD - ELEIÇÃO** é um projeto de **processamento de linguagem natural (NLP)** que utiliza a **API do Twitter** para obter os **tweets** sobre a **Eleição brasileira**.
 
 O projeto contém:
 
