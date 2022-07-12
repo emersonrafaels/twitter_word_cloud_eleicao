@@ -65,6 +65,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 Libs interessantes utilizadas no Projeto:
 
 - [Tabulate](https://pypi.org/project/tabulate/): Permitindo obter preety prints de dados tabulados.
+- [Tweepy](https://docs.tweepy.org/en/latest/index.html): Fornecendo um Wrapper para a API do Twitter, substituindo o *searchtweets*.
+- [Dynaconf](https://www.dynaconf.com/): Fornecendo uma forma segura de controlar ambientes, variáveis de configuração e tokens (extremamente importante para esse projeto que contém tokens de Developer do Twitter).
 
 ## ♤♠♧♣  Passos
 
