@@ -1,0 +1,6 @@
+search_tweets_api:
+  account_type: ""
+  endpoint: ""
+  bearer_token: ""
+  consumer_key: ""
+  consumer_secret: ""

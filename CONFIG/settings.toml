@@ -1,0 +1,7 @@
+[default]
+
+[premium]
+ACCOUNT_TYPE = "premium"
+ENDPOINT = "https://api.twitter.com/2/tweets/search/all"
+
+[enterprise]
