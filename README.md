@@ -70,8 +70,8 @@ Libs interessantes utilizadas no Projeto:
 
 ## ♤♠♧♣  Passos
 
- - Criar arquivo: CONFIG/.secrets.toml
- - Inserindo os dados de configuração no .secrets.toml
+1. Criar arquivo: CONFIG/.secrets.toml
+2. Inserindo os dados de configuração no .secrets.toml
 ```python 
 [default]
 
@@ -84,6 +84,8 @@ SEARCHTWEETS_ACCESS_TOKEN_SECRET = "VALUE_ACCESS_TOKEN_SECRET"
 
 [enterprise]
 ```
+
+3. Executar o get_tweets.py
 
 ## 🚀 Como executar o projeto
 
