@@ -60,7 +60,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Python]
 
-## 🛠  Bibliotecas auxiliares
+## 💖  Bibliotecas auxiliares
 
 Libs interessantes utilizadas no Projeto:
 
