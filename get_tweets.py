@@ -1,42 +1,29 @@
 import os
 
-from dynaconf import settings
-import tweepy
+import tweepy as tw
+from tabulate import tabulate
 
-# OBTENDO AS CONFIGURAÇÕES DE AUTENTICAÇÃO
-auth = tweepy.OAuth1UserHandler(
-    settings.SEARCHTWEETS_CONSUMER_KEY,
-    settings.SEARCHTWEETS_CONSUMER_SECRET,
-    settings.SEARCHTWEETS_ACCESS_TOKEN,
-    settings.SEARCHTWEETS_ACCESS_TOKEN_SECRET
-)
+from UTILS.connect_twitter import orchestra_connect_twitter
+from UTILS.twitter_objects import get_recently_tweets
 
-# AUTENTICANDO
-client = tweepy.Client(settings.SEARCHTWEETS_BEARER_TOKEN)
+# REALIZANDO A CONEXÃO COM O TWITTER
+client = orchestra_connect_twitter()
 
-# BUSCA
-QUERY = "Bolsonaro OR Lula lang:pt"
-LIMIT = 60
+# BUSCA SEM RETWEET
+QUERY = "Bolsonaro OR Lula -is:retweet lang:pt"
+LIMIT = 10
 
-# REALIZANDO A OBTENÇÃO DOS TWEETS
-tweets = client.search_recent_tweets(QUERY,
-                                     max_results=LIMIT).data
+# OBTENDO OS RECENTES TWEETS USANDO A QUERY
+validator, tweets, df_tweets = get_recently_tweets(client=client, query=QUERY, limit=LIMIT)
 
-# INICIANDO UMA LISTA PARA ARMAZENAR AS INFORMAÇÕES
-list_result = []
 
-for tweet in tweets:
-    print(tweet.id)
-    print(tweet.text)
-    print("-"*50)
-    list_result.append([str(tweet.id), str(tweet.text)])
+if validator:
 
-with open("RESULTADO_TWEETS.txt", mode="a") as list_result_tweets:
+    # VISUALIZANDO OS DADOS UTILIZANDO TABULATE
+    print(tabulate(tweets, headers="keys"))
 
-    for line in list_result:
-
-        try:
-            list_result_tweets.write("ID: {0} - TEXTO: {1}\n".format(line[0],
-                                                                     line[1]))
-        except Exception as ex:
-            print(ex)
+    # PERCORRENDO CADA UM DOS DADOS OBTIDOS
+    for tweet in tweets:
+        print(tweet["id"])
+        print(tweet["text"])
+        print("-"*50)

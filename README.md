@@ -60,6 +60,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Python]
 
+## 🛠  Bibliotecas auxiliares
+
+Libs interessantes utilizadas no Projeto:
+
+- [Tabulate](https://pypi.org/project/tabulate/): Permitindo obter preety prints de dados tabulados.
+
 ## ♤♠♧♣  Passos
 
  - Criar arquivo: CONFIG/.secrets.toml
