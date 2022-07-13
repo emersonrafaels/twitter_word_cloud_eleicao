@@ -23,7 +23,21 @@ def get_recently_tweets(client: tw.client.Client,
         tweets = client.search_recent_tweets(query=query,
                                              max_results=limit,
                                              start_time=start_time,
-                                             end_time=end_time)
+                                             end_time=end_time,
+                                             tweet_fields=['author_id',
+                                                           'created_at',
+                                                           'text',
+                                                           'source',
+                                                           'lang',
+                                                           'geo'],
+                                             user_fields=['name',
+                                                          'username',
+                                                          'location',
+                                                          'verified'],
+                                             expansions=['geo.place_id',
+                                                         'author_id'],
+                                             place_fields=['country',
+                                                           'country_code'])
 
         # SALVANDO OS RESULTADOS COMO JSON
         tweets_dict = tweets.json()
