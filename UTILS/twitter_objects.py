@@ -3,9 +3,16 @@ from inspect import stack
 
 import tweepy as tw
 import pandas as pd
+from pydantic import validate_arguments, ValidationError
+from typing import Optional, Union
 
 
-def get_recently_tweets(client, query, limit, kwargs):
+@validate_arguments(config=dict(arbitrary_types_allowed=True))
+def get_recently_tweets(client: tw.client.Client,
+                        query: str,
+                        limit: int = 10,
+                        start_time: Optional[Union[str, datetime]] = None,
+                        end_time: Optional[Union[str, datetime]] = None):
 
     # INICIANDO AS VARIÁVEIS DE RESULTADOS
     validator = False
@@ -14,7 +21,9 @@ def get_recently_tweets(client, query, limit, kwargs):
     try:
         # REALIZANDO A OBTENÇÃO DOS TWEETS
         tweets = client.search_recent_tweets(query=query,
-                                             max_results=limit)
+                                             max_results=limit,
+                                             start_time=start_time,
+                                             end_time=end_time)
 
         # SALVANDO OS RESULTADOS COMO JSON
         tweets_dict = tweets.json()

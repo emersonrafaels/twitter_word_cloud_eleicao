@@ -13,19 +13,19 @@ client = orchestra_connect_twitter()
 # BUSCA SEM RETWEET
 QUERY = "Bolsonaro OR Lula -is:retweet lang:pt"
 LIMIT = 10
-START_TIME = datetime(2022, 7, 5, 10, 10, 10)
-END_TIME = datetime(2022, 7, 12)
+START_TIME = datetime(2022, 7, 10, 8, 0, 0)
+END_TIME = datetime(2022, 7, 12, 0, 0, 0)
 
-
-TWETTS_ADITIONAL_ARGS = {"START_TIME": START_TIME,
-                         "END_TIME": END_TIME}
+input = {
+    "client": client,
+    "query": QUERY,
+    "limit": LIMIT,
+    "start_time": START_TIME,
+    "end_time": END_TIME
+}
 
 # OBTENDO OS RECENTES TWEETS USANDO A QUERY
-validator, tweets, df_tweets = get_recently_tweets(client=client,
-                                                   query=QUERY,
-                                                   limit=LIMIT,
-                                                   kwargs=TWETTS_ADITIONAL_ARGS)
-
+validator, tweets, df_tweets = get_recently_tweets(**input)
 
 if validator:
 
